@@ -1,17 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\PruebaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/prueba', [HomeController::class, 'index']);
+
 //IMPORTANTE: Las rutas se leen de arriba hacía abajo, por lo que si se coloca una ruta con un parámetro opcional al final, no se podrá acceder a las rutas que están arriba de ella, ya que el sistema siempre tomará la primera ruta que coincida con la URL ingresada.
 
 //Ruta de prueba para verificar que la configuración de Laravel está funcionando correctamente. Para ello, vamos a crear una nueva ruta en el archivo routes/web.php. Para ello, vamos a crear una nueva ruta en el archivo routes/web.php.
-Route::get('/prueba', function () {
+/* Route::get('/prueba', function () {
     return ('¡Esta es una nueva ruta funcionando!');
-});
+}); */
 
 //Ruta de prueba para verificar que la configuración de Laravel está funcionando correctamente. Para ello, vamos a crear una nueva ruta en el archivo routes/web.php. Para ello, vamos a crear una nueva ruta en el archivo routes/web.php.
 
@@ -21,15 +26,16 @@ Route::get('/prueba', function () {
 //Patch (Siempre se usa para actualizar información)
 //Delete (Siempre se usa para eliminar información)
 
-Route::get('/post/post-1', function () {
-    return ('¡Esta es una nueva ruta funcionando-1!');
-});
-Route::get('/post/post-2', function () {
+/* Route::get('/post/post-1',[HomeController::class, 'index']); */
+
+
+
+/* Route::get('/post/post-2', function () {
     return ('¡Esta es una nueva ruta funcionando-2!');
 });
 Route::get('/post/post-3', function () {
     return ('¡Esta es una nueva ruta funcionando-3!');
-});
+}); */
 
 
 //DISTINTAS FORMAS DE DEFINIR RUTAS
@@ -50,7 +56,7 @@ Route::get('/post/post-3', function () {
 
 //Otra forma de definir rutas con varios parámetros y uno opcional con el signo de interrogación es decir {nombre?}
 
-Route::get('/post/{post?}/{categoria?}/{nombre?}',function($post=null, $categoria=null, $nombre=null){
+/* Route::get('/post/{post?}/{categoria?}/{nombre?}',function($post=null, $categoria=null, $nombre=null){
 
 //Cuando se usan las condicionales en la ruta se debe armar de forma inversa.    
     if($nombre){
@@ -63,4 +69,10 @@ Route::get('/post/{post?}/{categoria?}/{nombre?}',function($post=null, $categori
         return ("¡Usted esta en la categoria ({$post})!");
     }
     return ("¡Usted esta en el inicio!");
-});
+}); 
+ */
+    //Distintas formas de definir rutas con controladores
+    Route::get('/post/{post?}/{categoria?}/{nombre?}',[PruebaController::class, 'create']);
+    Route::get('/create', [PruebaController::class, 'create']);
+    Route::get('/show', [PruebaController::class, 'show']);
+    Route::get('/inicio',[InicioController::class, 'inicio']);
