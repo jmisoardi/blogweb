@@ -54,13 +54,13 @@ Route::get('/post/{post?}/{categoria?}/{nombre?}',function($post=null, $categori
 
 //Cuando se usan las condicionales en la ruta se debe armar de forma inversa.    
     if($nombre){
-        return ("¡Seleccion de la {$post} {$categoria} {$nombre}!");
+        return ("¡Seleccion  ( {$post} -- {$categoria} -- {$nombre})!");
     }
     if($categoria){
-        return ("¡Esta es una nueva ruta funcionando de la categoria {$categoria}!");
+        return ("¡Esta es una nueva ruta funcionando de la categoria ( {$post} --- {$categoria})!");
     }
     if($post){
-        return ("¡Usted esta en la categoria {$post}!");
+        return ("¡Usted esta en la categoria ({$post})!");
     }
     return ("¡Usted esta en el inicio!");
 });
