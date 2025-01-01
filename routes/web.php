@@ -74,5 +74,10 @@ Route::get('/post/post-3', function () {
     //Distintas formas de definir rutas con controladores
     Route::get('/post/{post?}/{categoria?}/{nombre?}',[PruebaController::class, 'create']);
     Route::get('/create', [PruebaController::class, 'create']);
-    Route::get('/show', [PruebaController::class, 'show']);
-    Route::get('/inicio',[InicioController::class, 'inicio']);
+    
+    
+    Route::get('/index',[InicioController::class, 'index']);
+    
+    Route::get('/create',[InicioController::class, 'create']);
+    
+    Route::get('/show/{post}', [InicioController::class, 'show']);

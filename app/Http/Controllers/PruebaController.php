@@ -23,9 +23,9 @@ class PruebaController extends Controller{
     public function create(){
         return "¡Revisando la ruta Create!";
     }
-    public function show(){
+    /* public function show(){
         return "¡Revisando la ruta Show!";
-    }
+    } */
 
 }
 
