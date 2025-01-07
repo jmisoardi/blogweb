@@ -26,6 +26,7 @@ class PruebaController extends Controller{
     /* public function show(){
         return "¡Revisando la ruta Show!";
     } */
-
+    
+    //Prueba del repositorio en la Laptop para ver si se sube al repo!! 
 }
 
