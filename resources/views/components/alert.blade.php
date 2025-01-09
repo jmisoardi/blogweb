@@ -1,6 +1,4 @@
-
 @props(['type'])
-
 @php
     switch ($type) {
         case 'info':

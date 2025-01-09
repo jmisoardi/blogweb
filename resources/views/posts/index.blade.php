@@ -25,7 +25,7 @@
             {{-- </x-alert>    --}}
             
             {{-- Segunda forma de utilizar x-alert  --}}
-                <x-alert type="dark">
+                <x-alert type="info">
                     <x-slot name="title">
                         Titulo de Alerta!! 
                     </x-slot>
