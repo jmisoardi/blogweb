@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\PruebaController;
+use App\Models\Post;
 
 Route::get('/', function () {
     return view('welcome');
@@ -81,3 +82,15 @@ Route::get('/post/post-3', function () {
     Route::get('/create',[InicioController::class, 'create']);
     
     Route::get('/show/{post}', [InicioController::class, 'show']);
+
+    Route::get('prueba', function () {
+        $post = new Post;
+        
+        $post->title = 'Jair Manuel Isoardi'; 
+        $post->content = '¡Bienvenido a mi blog!';
+        $post->categoria = '¡Aula virtual!';        
+        
+        $post->save();
+
+        return $post;
+    });
