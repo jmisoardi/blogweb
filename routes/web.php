@@ -83,14 +83,14 @@ Route::get('/post/post-3', function () {
     
     Route::get('/show/{post}', [InicioController::class, 'show']);
 
-    Route::get('prueba', function () {
-        $post = new Post;
+    Route::get('/prueba', function () {
+        $posts = new Post();
         
-        $post->title = 'Jair Manuel Isoardi'; 
-        $post->content = '¡Bienvenido a mi blog!';
-        $post->categoria = '¡Aula virtual!';        
+        $posts->title = 'Jair Manuel Isoardi'; 
+        $posts->content = '¡Bienvenido a mi blog!';
+        $posts->categoria = '¡Aula virtual!';        
         
-        $post->save();
+        $posts->save();
 
-        return $post;
+        return $posts;
     });
