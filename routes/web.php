@@ -83,14 +83,57 @@ Route::get('/post/post-3', function () {
     
     Route::get('/show/{post}', [InicioController::class, 'show']);
 
+    // En este ejemplo creamos una ruta, y una instancia de la clase Post, la cual es un modelo que representa una tabla en la base de datos. Luego, asignamos valores a los atributos de la instancia, y finalmente, guardamos la instancia en la base de datos.
     Route::get('/prueba', function () {
-        $posts = new Post();
+            
+        //Crear nuevo registro
+        /* $posts = new Post();
         
-        $posts->title = 'Jair Manuel Isoardi'; 
+        $posts->title = 'Mauro Garro'; 
         $posts->content = '¡Bienvenido a mi blog!';
         $posts->categoria = '¡Aula virtual!';        
         
-        $posts->save();
+        $posts->save(); */
+       
+    
+        //Buscar registro por id
+        /* $posts= Post::find(1); */
 
-        return $posts;
+        //Buscar registro, con una condicional, en este caso es por "title" y va a buscar el primer registro que encuentre, con el metodo "first()"
+        /* $posts = Post::where('title', 'Jair Manuel Isoardi')->first();
+        
+        $posts->title = 'Jair Ramon Isoardi'; */
+        
+        
+        //IMPORTANTE BUSQUEDA DE REGISTROS
+
+        //1º-FORMA-Trae todos los registros, ambos son iguales
+        /*  $posts = Post::all();*/
+        /*  $posts = Post::get();*/
+
+        //2º-FORMA- Trae todos los registros que cumplan con la condición
+        /*  $posts = Post::where('id','>=','1')->get(); */
+        
+        //3º-FORMA-Trae todos los registros que cumplan con la condición
+        /*  $posts = Post::where('id','>=','1')
+                        ->where ('title','Sofia Castillo')
+                        ->get(); */
+        
+        //4º-FORMA-Trae todos los registros que cumplan con la condición, en este caso ordenados por id de forma descendente
+        /*  $posts = Post::orderby('id','desc')
+                        ->get(); */
+
+        //5º-FORMA-Ordena los registros, hace un select, y toke(toma 2 registros) y los trae
+        /* $posts = Post::orderby('id','asc')
+                        ->select('id','title','content','categoria') 
+                        ->take(2)                               
+                        ->get(); */
+
+        
+        //6º-FORMA-Elimina registro.
+        /* $posts = Post::find(1);
+        $posts->delete(); */
+        
+        
+     /* return $posts; */
     });
