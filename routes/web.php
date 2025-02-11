@@ -73,15 +73,17 @@ Route::get('/post/post-3', function () {
 }); 
  */
     //Distintas formas de definir rutas con controladores
-    Route::get('/post/{post?}/{categoria?}/{nombre?}',[PruebaController::class, 'create']);
-    Route::get('/create', [PruebaController::class, 'create']);
-    
+    Route::get('/post/{post?}/{categoria?}/{nombre?}',[PruebaController::class, 'index']);
+    /* Route::get('/create', [PruebaController::class, 'create']); */
+    /* Route::get('/create/{variable?}',[PruebaController::class, 'create']); */
+
+
     
     Route::get('/index',[InicioController::class, 'index']);
     
     Route::get('/create',[InicioController::class, 'create']);
     
-    Route::get('/show/{post}', [InicioController::class, 'show']);
+    Route::get('/show/{post?}', [InicioController::class, 'show']);
 
     // En este ejemplo creamos una ruta, y una instancia de la clase Post, la cual es un modelo que representa una tabla en la base de datos. Luego, asignamos valores a los atributos de la instancia, y finalmente, guardamos la instancia en la base de datos.
     Route::get('/prueba', function () {

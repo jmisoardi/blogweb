@@ -20,8 +20,12 @@ class PruebaController extends Controller{
         
     }    
     //Probando una nueva ruta con un controlador
-    public function create(){
-        return "¡Revisando la ruta Create!";
+    public function create($variable=null){
+        
+        if($variable){
+            return ("¡Revisando la ruta de ({$variable})!");
+        }
+        return ("Esta es la ruta Create de Jair");
     }
     /* public function show(){
         return "¡Revisando la ruta Show!";

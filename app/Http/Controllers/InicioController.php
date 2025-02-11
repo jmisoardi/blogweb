@@ -12,7 +12,7 @@
             return view('posts.create');
         }
 
-        public function show($post) {
+        public function show($post =null) {
             
             //Esta son dos formas de pasar datos a la vista
             //La primera con una variable definida

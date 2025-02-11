@@ -7,10 +7,12 @@
     <title>Isoardi</title>
 </head>
 <body>
-    <h1>Estamos en la vista Show {{$post}}</h1>
+    <h1>Estamos en la vista Show </h1>
 
-    @if(true)
+    @if($post)
         <p>El post tiene una categoria {{$post}}</p>
+    @else
+        <p>No se proporcionó ningún post.</p>
     @endif
     
 </body>
